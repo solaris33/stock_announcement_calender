@@ -4,7 +4,7 @@ const SAMSUNG_IR_URL =
   'https://www.samsung.com/global/ir/ir-events-presentations/events/'
 
 export const earningsData: EarningsCalendarData = {
-  lastVerifiedAt: '2026-07-12',
+  lastVerifiedAt: '2026-07-16',
   events: [
     {
       id: 'samsung-2025-q4-preliminary',
@@ -90,6 +90,19 @@ export const earningsData: EarningsCalendarData = {
       source: {
         label: '삼성전자 공식 IR 일정',
         url: SAMSUNG_IR_URL,
+      },
+    },
+    {
+      id: 'sk-hynix-2026-q2-final',
+      company: 'sk-hynix',
+      title: 'SK하이닉스 2026년 2분기 실적발표',
+      fiscalPeriod: '2026년 2분기',
+      date: '2026-07-29',
+      timeKst: '09:00',
+      type: 'final',
+      source: {
+        label: 'SK하이닉스 공식 IR',
+        url: 'https://www.skhynix.com/ir/UI-FR-IR01/',
       },
     },
     {

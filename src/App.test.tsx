@@ -28,7 +28,7 @@ describe('earnings calendar UI', () => {
     )
   })
 
-  it('filters a company from calendar and upcoming events', async () => {
+  it('filters a company while retaining another company’s upcoming event', async () => {
     const user = userEvent.setup()
     render(<App today="2026-07-12" />)
 
@@ -36,6 +36,7 @@ describe('earnings calendar UI', () => {
     await user.click(screen.getByRole('button', { name: '삼성전자 숨기기' }))
 
     expect(screen.queryByRole('button', { name: '삼성전자 2026년 2분기 실적발표' })).not.toBeInTheDocument()
-    expect(screen.getAllByText('선택한 회사의 예정 일정이 없습니다.')).toHaveLength(2)
+    expect(screen.getByRole('button', { name: 'SK하이닉스 2026년 2분기 실적발표' })).toBeInTheDocument()
+    expect(screen.queryByText('선택한 회사의 예정 일정이 없습니다.')).not.toBeInTheDocument()
   })
 })
